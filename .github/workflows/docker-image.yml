@@ -12,6 +12,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
     steps:
     - uses: actions/checkout@v2
     
@@ -34,4 +38,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
           push: true
-          tags: premchavhan/sample-node-react:latest
+          tags: premchavhan/sample-node-react:1.0
